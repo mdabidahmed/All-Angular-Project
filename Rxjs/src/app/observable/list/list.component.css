@@ -1,0 +1,24 @@
+li {
+  border: 1px solid rgb(53, 120, 243);
+  width: 200px;
+  height: 100px;
+  background-color: rgba(140, 188, 243, 0.377);
+  border-radius: 15px;
+  margin: 10px;
+  font-weight: bold;
+  list-style: none;
+  /* text-align: center; */
+  padding-left: 60px;
+  padding-top: 30px;
+}
+texts {
+  padding-top: 100px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+ul {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="shadow-lg p-3 mb-0 bg-white rounded">
+    <div id="header" class="d-flex justify-content-center text-center ">
+      <h1> Converter</h1>
+     </div>
+    <div class="card d-flex justify-content-center" style="height: 20rem">
+      
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="userInput"> <b>Enter</b></label>
+            <input
+              #searchInput
+              (keyup)="onChanges($event.target.value)"
+              type="text"
+              class="form-control"
+              id="userInputId"
+              aria-describedby="emailHelp"
+              placeholder="Enter"
+            />
+            <!-- <small id="emailHelp" class="form-text text-muted">Enter the value to convert.</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="convertFrom"><b>From</b> </label>
+            <ng-select
+              [items]="ConvertFrom"
+              bindLabel="name"
+              [searchable]="true"
+              [multiple]="false"
+              bindValue="name"
+              [editableSearchTerm]="true"
+              [placeholder]="val1"
+              [(ngModel)]="selectedFrom"
+              (change)="changeInFrom($event)"
+            >
+            </ng-select>
+
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="convertTo"> <b>To</b></label>
+            <ng-select
+              [items]="ConvertTo"
+              bindLabel="name"
+              [searchable]="true"
+              bindValue="name"
+              [multiple]="false"
+              [editableSearchTerm]="true"
+              [placeholder]="val2"
+              [(ngModel)]="selectedTo"
+              (change)="changeInFrom($event)"
+            >
+            </ng-select>
+
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+        </div>
+      </div>
+      <br />
+      <ng-container *ngIf="inputVal">
+        <hr />
+        <div class="">
+          <div class="d-flex justify-content-center text-center mt-5">
+            <div>
+              <h3>
+                {{ inputVal }}&nbsp;{{ convertParaFrom }} =
+                {{ convertFromTo }}&nbsp;{{ convertParaTo }}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

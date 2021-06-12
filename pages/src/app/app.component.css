@@ -1,0 +1,9 @@
+p{
+    font-weight: 700;
+}
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-top: 10px; 
+    margin-bottom: 10px;/* Added */
+}
