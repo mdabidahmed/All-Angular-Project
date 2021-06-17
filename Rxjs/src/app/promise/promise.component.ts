@@ -17,14 +17,14 @@ export class PromiseComponent implements OnInit {
   dell = {
     brand: 'Dell',
     harddisk: '1tb',
-    color: "black"
-  }
+    color: 'black',
+  };
 
   hp = {
     brand: 'hp',
     harddisk: '2tb',
-    color: "blue"
-  }
+    color: 'blue',
+  };
   ngOnInit(): void {
     let buyLaptop = new Promise((resolve, reject) => {
       if (this.DellAvailable()) {
@@ -39,7 +39,6 @@ export class PromiseComponent implements OnInit {
         return setTimeout(() => {
           reject('Laptop is not available on store');
         }, 3000);
-        
       }
     });
     buyLaptop
@@ -47,7 +46,7 @@ export class PromiseComponent implements OnInit {
         console.log('then code =>', res);
       })
       .catch((res) => {
-        console.log('error!!!!',res);
+        console.log('error!!!!', res);
       });
   }
 }

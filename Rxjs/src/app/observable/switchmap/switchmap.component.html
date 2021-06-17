@@ -1,0 +1,58 @@
+<ng-container>
+  <div *ngIf="error" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Error: </strong> {{error}}
+    <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</ng-container>
+
+
+<div class="my-3">
+
+
+  <div class="d-flex justify-content-center">
+    <div class="col-md-8">
+      <h2>SwitchMap</h2> <br>
+      <h5>Search Uxtrendz Video</h5>
+      <form #searchForm="ngForm">
+        <input type="text" required name="searchTerm" autocomplete="off" ngModel class="form-control form-control-md">
+      </form>
+      <hr>
+    </div>
+
+  </div>
+</div>
+<br>
+
+<div class="results">
+  <div class="d-flex ">
+    <h5 *ngIf="searchResultCount">Search Results</h5>
+    <ng-container *ngIf="searchResultCount">
+      <span class="mx-auto text-muted">
+        {{searchResultCount}}&nbsp;Result found...
+      </span>
+    </ng-container>
+
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Thumbnail</td>
+        <td>Title & Description</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of searchResults; index as i">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td><img src="{{item.thumb}}" alt="image" width="120px"></td>
+        <td><strong>{{item.title}}</strong>
+          <p>{{item.description}}
+          </p>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

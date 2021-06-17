@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
+import { DesignUtilityService } from 'src/app/appService/design-utility.service';
 
 @Component({
   selector: 'app-from-event',
@@ -8,15 +9,19 @@ import { fromEvent } from 'rxjs';
 })
 export class FromEventComponent implements OnInit {
   @ViewChild('addBtn') addBtn: ElementRef;
-  constructor() {}
+  constructor(private _designUtility: DesignUtilityService) {}
 
   ngOnInit(): void {}
   ngAfterViewInit(): void {
-    let count = 1;
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    let count = 0;
+    // *! / Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     fromEvent(this.addBtn.nativeElement, 'click').subscribe((res) => {
-      console.log('video-'+count++);
+      ++count;
+      console.log('video-'+count);
+      this._designUtility.print(count,'elcontainer');
+      this._designUtility.print(count,'elcontainer2');
     });
   }
+
 }

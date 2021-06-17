@@ -7,18 +7,23 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ListComponent } from './observable/list/list.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
-
+import { FormsModule } from '@angular/forms';
+import { SwitchmapComponent } from './observable/switchmap/switchmap.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     PromiseComponent,
     ObservableComponent,
     ListComponent,
-    FromEventComponent
+    FromEventComponent,
+    SwitchmapComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
